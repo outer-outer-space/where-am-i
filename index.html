@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155724944-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'UA-155724944-1');
+	</script>
+    <meta charset="utf-8">
+    <title>Where am I? -(outer outer space)-</title>
+	<meta name="description" content="A visualization of the constellations of social media personas that have arisen from my tendency to compartmentalize my various trains of thought online.">
+	<meta name="author" content="Outer Outer Space">
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Astloch:wght@400;700&family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+	</head>
+	<style>
+	    @font-face {
+		  font-family: 'Chomsky';
+		  src: url('../fonts/Chomsky.otf'); /* IE9 Compat Modes */
+		  src: url('../fonts/Chomsky.otf')  format('opentype'), /* Safari, Android, iOS */
+		}
+		html, body {
+			margin: 0;
+			width: 100%;
+			height: 100%;
+			background: #1E2429;
+			font-family: 'IBM Plex Mono', monospace;
+			color: #ffffff;
+		}
+		.wrapper {
+			max-width: 80%;
+			margin: 0 auto;
+			height: auto;
+			padding: 20px;
+		}
+		header {
+			width: 100%;
+			display: grid;
+            grid-template-columns: 50% 50%;
+            grid-gap: 30px;
+            margin-bottom: 60px;
+		}
+		.title-section-h1 {
+    		font-family: 'Astloch', cursive;
+			font-size: 95px;
+            font-size: 7vw;
+            color: #82FF63;
+            margin: 0 0 -20px 0;
+            font-weight: 400;
+		}
+		.title-section-hr {
+    		border-top: 1px solid #82FF63;
+    		border-bottom: 0;
+    		margin-top: 15px;
+		}		
+		.title-section-p {
+			font-size: 13px;
+			text-align: left;
+			margin-top: 10px;
+		}
+		.navigation-title,
+		.footer-title {
+			color: #ffffff;
+			text-decoration: none;
+			font-size: 20px;
+		}
+
+		.navigation-title:hover,
+		.footer-title:hover {
+			color: #82FF63;
+		}
+		
+		.navigation-title em,
+		.footer-title em {
+			font-family: 'Chomsky', serif;
+		}
+		.nav-hr {
+    		border-top: 1px solid #ffffff;
+    		border-bottom: 0;
+    		margin-bottom: 50px;
+		}
+		hr {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h2 {
+			font-size: 28px;
+			padding-top: 50px;
+		}
+		
+		.body-p {
+			font-size: 13px;
+			line-height: 1.5;
+		}
+		.body-p a {
+    		color: #ffffff;
+    		text-decoration: underline;
+		}
+		.body-p a:hover {
+    		color: #82FF63;
+		}
+		a {
+			color: #82FF63;
+    		text-decoration: none;
+		}
+		a:hover {
+			color: #bbbbbb;
+		}
+		.constellation {
+    		width: 100%;
+		}
+		.row-1 {
+    		width: 100%;
+    		display: flex;
+    		justify-content: space-between;
+		}
+		.row-2 {
+    		width: 100%;
+    		display: flex;
+    		justify-content: center;
+    		align-items: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+		}
+		.row-3 {
+    		width: 100%;
+    		display: flex;
+    		justify-content: space-between;
+		}
+		.inline-constellations {
+    		display: flex;
+    		justify-content: center;
+    		align-items: center;
+		}
+		.inline-constellations {
+    		width: 50%;
+		}
+        .inline-constellations .inline-left .row-1,
+        .inline-constellations .inline-left .row-3 {
+    		justify-content: flex-start;
+        }
+
+        .inline-constellations .inline-right .row-1,
+        .inline-constellations .inline-right .row-3 {
+    		justify-content: flex-end;
+        }
+        .inline-constellations .inline-right .row-2 {
+    		justify-content: flex-start;
+        }
+        .inline-left {
+            /*border-right: 1px dashed #82FF63;*/
+        }
+		figure {
+			margin: 0;
+			padding: 0;
+			border: 0;
+            font-size: 13px;
+		}
+        .persona-node {
+			text-align: center;
+			padding: 20px 60px;
+		}
+		.persona-node a:hover {
+			color: #82FF63;
+			text-decoration: underline;
+		}
+
+		.web-property-node {
+    		text-align: left;
+		}
+		.web-property-node-link {
+    		color: #ffffff;
+		}
+		.web-property-node-link:hover {
+    		color: #82FF63;
+			text-decoration: underline;
+		}
+		.inline-node {
+    		display: flex;
+    		align-items: center;
+		}
+		.inline-caption-left {
+    		padding-right: 10px;
+		}
+		.inline-caption-right {
+    		padding-left: 10px;
+		}
+		.align-right {
+    		text-align: right;
+		}
+		.center {
+    		text-align: center;
+		}
+		.no-wrap {
+    		white-space: nowrap;
+		}
+		.green-divider {
+    		text-align: center;
+    		margin: 0 auto;
+		}
+		.configuration-space-constellation .row-1,
+		.configuration-space-constellation .row-2 {
+    		justify-content: center;
+		}
+		.lone-node {
+    		max-width: 150px;
+    		margin: 0 auto;
+    		text-align: center;
+		}
+		.footer-section-h2 {
+    		font-family: 'Astloch', cursive;
+			font-size: 45px;
+            font-size: 3vw;
+            color: #ffffff;
+            font-weight: 400;
+            text-align: center;
+            margin: 0;
+		}
+		.footer-p {
+			font-size: 13px;
+			line-height: 1.7;
+			font-style: italic;
+    		text-align: center;
+            padding: 0 0 100px 0;
+		}
+		footer {
+			text-align: center;
+			padding-bottom: 100px;
+		}
+		.footer-hr {
+			margin: 100px 0;
+			border-top: 1px solid #fffff;
+			border-bottom: 0px;
+		}
+		.footer-title {
+			text-align: center;
+		}
+    	@media only screen and (max-width: 1080px) {
+    		.title-section-h1 {
+    		}
+        }
+    	@media only screen and (max-width: 1000px) {
+        	.wrapper {
+			    max-width: 85%;
+    		}
+    		.inline-constellations {
+        		width: 40%;
+    		}
+            .node-2,
+            .node-3,
+            .node-4 {
+                margin-left: -30px;
+            }
+            .node-9,
+            .node-10,
+            .node-11,
+            .node-12 {
+                margin-left: -40px;
+            }
+            .node-13 {
+                transform: rotate(20deg);
+            }
+            .node-13 figcaption {
+                transform: rotate(-20deg);
+            }
+            .node-16 {
+                transform: rotate(-20deg);
+            }
+            .node-16 figcaption {
+                transform: rotate(20deg);
+            }
+            .node-18 {
+                transform: rotate(-20deg);
+            }
+            .node-18 figcaption {
+                transform: rotate(20deg);
+            }
+            .node-19 {
+                margin-left: -20px;
+            }
+            .node-22 {
+                transform: rotate(20deg);
+            }
+            .node-22 figcaption {
+                transform: rotate(-20deg);
+                margin-top: -25px;
+            }
+    		.inline-constellations {
+        		display: block;
+    		}
+    		.inline-left {
+        		margin-bottom: 80px;
+    		}
+        }
+    	@media only screen and (max-width: 1000px) {
+        	.node-2 svg,
+        	.node-11 svg {
+            	transform: rotate(20deg);
+        	}
+        	.node-3 svg,
+        	.node-9 svg {
+            	transform: rotate(-20deg);
+        	}
+        }
+	</style>
+	<body>
+	    <div class="wrapper">
+			<navigation>
+				<a class="navigation-title" href="../../"><strong>Outer</strong> <span style="margin-left: -7px; margin-right: -5px;"><em>Outer</em></span> <strong>Space</strong></a>
+                <hr class="nav-hr">
+			</navigation>
+			<header>
+				<div class="header-left">
+					<h1 class="title-section-h1">Where <span class="no-wrap">am I?</</span></h1>
+					<hr class="title-section-hr">
+                    <p class="title-section-p"><em>Last updated August 2020</em></p>
+				</div>
+				<div class="header-right">
+    				<p class="body-p">I tend to compartmentalize my various trains of thought online. This constraint generally seems to suit me, so I formalized the idea into online personas that incorporate various of my tangential interests. Each persona represents a sustained train of thought&#151;in some cases delineated temporally.</p>
+    				<p class="body-p">Until now, I haven’t tried visualizing the constellations of social media personas that have arisen from this delineation of interests. I was inspired to make such a diagram after seeing Yehwan Song’s <a href="http://yhsong.com/" target="_blank" rel="nofollow">visualization of her creative projects</a> during her presentation at Typographics 2020.</p>
+				</div>
+			</header>
+            <section class="constellation">
+                <div class="row-1">
+                    <figure class="web-property-node node-1">
+                        <a class="web-property-node-link" href="https://www.behance.net/shibner" target="_bank" rel="me">
+                            <figcaption style="margin-left: -25px;">Behance</figcaption>
+                        </a>
+                        <svg width="291" height="101" fill="none" xmlns="http://www.w3.org/2000/svg"><title>pointer line</title><circle cx="3.5" cy="3.5" r="3.5" fill="#fff"/><path stroke="#fff" d="M3.16 3.526l287 97"/></svg>
+                    </figure>
+                    <figure class="web-property-node node-2">
+                        <a class="web-property-node-link" href="http://log.sarah-hibner.com/" target="_bank" rel="me">
+                            <figcaption style="margin-left: -70px;">log.sarah-hibner.com</figcaption>
+                        </a>
+                        <svg width="86" height="123" fill="none" xmlns="http://www.w3.org/2000/svg"><title>pointer line</title><circle cx="4.565" cy="17.88" r="3.5" transform="rotate(-15 4.565 17.88)" fill="#fff"/><path stroke="#fff" d="M85.627 107.688L4.807 18.569"/></svg>
+                    </figure>
+                    <figure class="web-property-node align-right node-3" style="margin-right: -25px;">
+                        <a class="web-property-node-link" href="https://www.linkedin.com/in/sahibner/" target="_bank" rel="me">
+                            <figcaption style="">LinkedIn</figcaption>
+                        </a>
+                        <svg width="87" height="123" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 25px;"><title>pointer line</title><circle r="3.5" transform="scale(-1 1) rotate(-15 26.698 321.944)" fill="#fff"/><path stroke="#fff" d="M1.355 107.688l80.82-89.12"/></svg>
+                    </figure>
+                    <figure class="web-property-node align-right node-4" style="margin-right: -25px;">
+                        <a class="web-property-node-link" href="https://www.goodreads.com/user/show/35437658-sarah" target="_bank" rel="me">
+                            <figcaption>Goodreads</figcaption>
+                        </a>
+                        <svg width="284" height="102" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 25px;"><title>pointer line</title><circle cx="280.5" cy="3.5" r="3.5" fill="#fff"/><path stroke="#fff" d="M281.165 3.472l-281 98"/></svg>
+                    </figure>
+                </div>
+                <div class="row-2">
+                    <figure class="web-property-node inline-node node-5">
+                        <a class="web-property-node-link" href="http://tangledtriangles.tumblr.com/" target="_bank" rel="me">
+                            <figcaption class="inline-caption-left">Tumblr</figcaption>
+                        </a>
+                        <svg width="127" height="7" fill="none" xmlns="http://www.w3.org/2000/svg"><title>pointer line</title><circle cx="3.5" cy="3.5" r="3.5" fill="#fff"/><path stroke="#fff" d="M4 2.5h123"/></svg>
+                    </figure>
+                    <figure class="persona-node node-6">
+                        <a href="https://sarah-hibner.com/" target="_bank" rel="me">
+                            <svg width="22" height="22" fill="none" class="persona-node-icon" xmlns="http://www.w3.org/2000/svg"><title>sarah-hibner.com icon</title><path d="M19.89 9.66h-.032c-.46-.46-1.041-.858-1.655-1.073a4.514 4.514 0 00-1.654-.306c-.246 0-.46 0-.705.061l-3.648 3.126-.582-3.616-.215-.215-2.574 2.575-.95 1.042a4.972 4.972 0 01-2.146-1.195c-.122-.154-.275-.307-.398-.49-.613-.828-.92-1.901-.92-2.943v-.46c.092-.736.307-1.44.644-2.084.858-.49 1.84-.797 2.82-.98a10.154 10.154 0 011.686-.123c1.348 0 2.697.245 3.984.705 1.808.612 3.494 1.655 4.904 2.942l2.574-2.575-.214-.214A13.317 13.317 0 0015.935.864a11.864 11.864 0 00-3.984-.705c-.582 0-1.134.03-1.716.153-1.44.215-2.881.828-3.985 1.808a2.761 2.761 0 00-.306.276L3.339 5.001c-.95.95-1.594 2.207-1.717 3.525-.03.184-.03.337-.03.49a5.07 5.07 0 00.92 2.943c.153.214.336.429.52.613l.215.214a4.816 4.816 0 002.452 1.318l2.574-2.574.644-.705.52 3.371.215.215 3.832-3.28c.214-.03.429-.03.674-.03.552 0 1.134.091 1.655.306a5.094 5.094 0 011.563.95c.061.061.092.123.153.153a5.006 5.006 0 01.613 5.394 8.313 8.313 0 01-2.605.797 9.64 9.64 0 01-1.349.092c-1.225 0-2.482-.214-3.708-.49-2.575-.644-5.057-1.594-7.509-2.666L.397 18.21l.214.215c2.421 1.103 4.904 2.053 7.509 2.666 1.195.307 2.452.521 3.678.521.46 0 .92-.03 1.348-.092 1.563-.214 3.065-.827 4.169-1.93l2.605-2.606c.092-.092.184-.214.276-.306.797-.95 1.287-2.115 1.287-3.402 0-1.134-.399-2.268-1.165-3.127-.061-.091-.153-.183-.214-.275l-.215-.215z" fill="#82FF63"/></svg>
+                            <figcaption><p>sarah-hibner.com</p></figcaption>
+                        </a>
+                    </figure>
+                    <figure class="web-property-node inline-node node-7">
+                        <svg width="127" height="7" fill="none" xmlns="http://www.w3.org/2000/svg"><title>pointer line</title><circle r="3.5" transform="matrix(-1 0 0 1 123.5 3.5)" fill="#fff"/><path stroke="#fff" d="M123 2.5H0"/></svg>
+                        <a class="web-property-node-link" href="https://mastodon.technology/web/accounts/91801" target="_bank" rel="me">
+                            <figcaption class="inline-caption-right">Mastodon</figcaption>
+                        </a>
+                    </figure>
+                </div>
+                <div class="row-3">
+                    <figure class="web-property-node node-8">
+                        <svg width="291" height="100" fill="none" xmlns="http://www.w3.org/2000/svg"><title>pointer line</title><circle cx="3.5" cy="96.5" r="3.5" fill="#fff"/><path stroke="#fff" d="M3.16 97.474l287-97"/></svg>
+                        <a class="web-property-node-link" href="https://www.pinterest.com/silvaxrerum/" target="_bank" rel="me">
+                            <figcaption style="margin-left: -35px;">Pinterest</figcaption>
+                        </a>
+                    </figure>
+                    <figure class="web-property-node node-9">
+                        <svg width="86" height="124" fill="none" xmlns="http://www.w3.org/2000/svg"><title>pointer line</title><circle r="3.5" transform="scale(1 -1) rotate(-15 -398.617 -70.12)" fill="#fff"/><path stroke="#fff" d="M85.627 15.75l-80.82 89.12"/></svg>                        
+                        <a class="web-property-node-link" href="https://www.facebook.com/sarah.hibner.5/" target="_bank" rel="me">
+                            <figcaption style="margin-left: -30px;">Facebook</figcaption>
+                        </a>
+                    </figure>
+                    <figure class="web-property-node center node-10">
+                        <svg width="7" height="152" fill="none" xmlns="http://www.w3.org/2000/svg"><title>pointer line</title><circle cx="3.5" cy="148.5" r="3.5" transform="rotate(-90 3.5 148.5)" fill="#fff"/><path stroke="#fff" d="M3.5 149V0"/></svg>
+                        <a class="web-property-node-link" href="https://www.instagram.com/tangledtriangles/" target="_bank" rel="me">
+                            <figcaption>Instagram</figcaption>
+                        </a>
+                    </figure>
+                    <figure class="web-property-node align-right node-11" style="margin-right: -15px;">
+                        <svg width="87" height="124" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 25px;"><title>pointer line</title><circle cx="82.415" cy="105.559" r="3.5" transform="rotate(165 82.415 105.559)" fill="#fff"/><path stroke="#fff" d="M1.355 15.751l80.819 89.119"/></svg>
+                        <a class="web-property-node-link" href="https://indieweb.org/User:Sarah-hibner.com" target="_bank" rel="me">
+                            <figcaption>IndieWeb</figcaption>
+                        </a>
+                    </figure>
+                    <figure class="web-property-node align-right node-12" style="margin-right: -25px;">
+                        <svg width="284" height="101" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 15px;"><title>pointer line</title><circle cx="280.5" cy="97.5" r="3.5" fill="#fff"/><path stroke="#fff" d="M281.165 98.528l-281-98"/></svg>
+                        <a class="web-property-node-link" href="https://ello.co/tangledtriangles" target="_bank" rel="me">
+                            <figcaption>Ello</figcaption>
+                        </a>
+                    </figure>
+                </div>
+            </section>
+	    </div>
+
+        <img class="green-divider" src="img/d-1.svg" alt="Dotted divider line" width="100%">
+        
+        <div class="wrapper inline-constellations">
+            <section class="inline-constellation inline-constellation-spacing inline-left">
+                <div class="row-1">
+                    <figure class="web-property-node node-13">
+                        <figcaption style="margin-left: -25px;"><a class="web-property-node-link" href="https://twitter.com/practicing_dsgn" target="_bank" rel="me">Twitter</a></figcaption>
+                        <svg width="291" height="101" fill="none" xmlns="http://www.w3.org/2000/svg"><title>pointer line</title><circle cx="3.5" cy="3.5" r="3.5" fill="#fff"/><path stroke="#fff" d="M3.16 3.526l287 97"/></svg>
+                    </figure>
+                </div>
+                <div class="row-2">
+                    <figure class="web-property-node inline-node node-14">
+                        <figcaption class="inline-caption-left"><a class="web-property-node-link" href="https://medium.com/@practicing.design" target="_bank" rel="me">Medium</a></figcaption>
+                        <svg width="127" height="7" fill="none" xmlns="http://www.w3.org/2000/svg"><title>pointer line</title><circle cx="3.5" cy="3.5" r="3.5" fill="#fff"/><path stroke="#fff" d="M4 2.5h123"/></svg>
+                    </figure>
+                    <figure class="persona-node node-15">
+                        <a href="https://practicing.design/" target="_bank" rel="me">
+                            <svg width="35" height="36" fill="none" class="persona-node-icon" xmlns="http://www.w3.org/2000/svg"><g opacity=".6"><path stroke="#82FF63" stroke-width=".246" stroke-dasharray="1.23 1.23" d="M5.299 5.447H29.7v24.401H5.299z"/><title>practicing.design icon</title><path fill-rule="evenodd" clip-rule="evenodd" d="M26.933 12.202l-14.88-3.988-3.987 14.88 14.88 3.988 3.987-14.88zm-6.011 5.6l-3.268-3.268-3.268 3.268 3.268 3.268 3.268-3.268z" fill="#82FF63"/></g><g opacity=".6"><path stroke="#82FF63" stroke-width=".246" stroke-dasharray="1.23 1.23" d="M8.872 2.705l23.57 6.315-6.316 23.57-23.57-6.316z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M28.021 14.829l-13.34-7.703-7.703 13.341 13.34 7.703 7.703-13.341zm-7.256 3.854l-2.31-4.003-4.003 2.311 2.31 4.002 4.003-2.31z" fill="#82FF63"/></g><g opacity=".6"><path stroke="#82FF63" stroke-width=".246" stroke-dasharray="1.23 1.23" d="M13.034.982l21.132 12.2-12.2 21.132-21.133-12.2z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M28.393 17.648L17.5 6.755 6.607 17.648 17.5 28.541l10.893-10.893zm-8.007 1.844l-1.196-4.464-4.464 1.196 1.196 4.465 4.464-1.197z" fill="#82FF63"/></g><g opacity=".6"><path stroke="#82FF63" stroke-width=".246" stroke-dasharray="1.23 1.23" d="M17.5.394l17.254 17.254L17.5 34.902.246 17.648z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M28.022 20.467l-7.703-13.34-13.34 7.702 7.702 13.34 13.34-7.702zm-8.211-.29v-4.622h-4.622v4.622h4.622z" fill="#82FF63"/></g><g opacity=".6"><path stroke="#82FF63" stroke-width=".246" stroke-dasharray="1.23 1.23" d="M21.965.982l12.2 21.132-21.13 12.2L.833 13.184z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M26.934 23.095l-3.987-14.88-14.88 3.987 3.987 14.88 14.88-3.988zm-7.856-2.406l1.196-4.464-4.464-1.197-1.196 4.464 4.464 1.197z" fill="#82FF63"/></g><g opacity=".6"><path stroke="#82FF63" stroke-width=".246" stroke-dasharray="1.23 1.23" d="M26.127 2.705l6.315 23.57-23.57 6.315L2.558 9.02z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M25.202 25.35V9.947H9.797V25.35h15.405zm-6.966-4.357l2.311-4.002-4.002-2.31-2.311 4.002 4.002 2.31z" fill="#82FF63"/></g></svg>
+                            <figcaption><p>practicing.design</p></figcaption>
+                        </a>
+                    </figure>
+                </div>
+                <div class="row-3">
+                    <figure class="web-property-node node-16">
+                        <svg width="291" height="100" fill="none" xmlns="http://www.w3.org/2000/svg"><title>pointer line</title><circle cx="3.5" cy="96.5" r="3.5" fill="#fff"/><path stroke="#fff" d="M3.16 97.474l287-97"/></svg>
+                        <figcaption style="margin-left: -25px;"><a class="web-property-node-link" href="https://dev.to/practicing_design" target="_bank" rel="me">Dev.to</a></figcaption>
+                    </figure>
+                </div>
+            </section>
+            <section class="inline-constellation inline-right">
+                <div class="row-1">
+                    <figure class="web-property-node node-17">
+                        <figcaption style="margin-left: -25px;"><a class="web-property-node-link" href="https://twitter.com/0uter0uterspace" target="_bank" rel="me">Twitter</a></figcaption>
+                        <svg width="7" height="80" fill="none" xmlns="http://www.w3.org/2000/svg"><title>pointer line</title><circle cx="3.5" cy="3.5" r="3.5" transform="rotate(90 3.5 3.5)" fill="#fff"/><path stroke="#fff" d="M3.5 7v73"/></svg>
+                    </figure>
+                    <figure class="web-property-node align-right node-18" style="margin-right: -25px;">
+                        <figcaption><a class="web-property-node-link" href="https://old.reddit.com/u/outer-outer-space" target="_bank" rel="me">Reddit</a></figcaption>
+                        <svg width="284" height="102" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 25px;"><title>pointer line</title><circle cx="280.5" cy="3.5" r="3.5" fill="#fff"/><path stroke="#fff" d="M281.165 3.472l-281 98"/></svg>
+                    </figure>
+                </div>
+                <div class="row-2">
+                    <figure class="persona-node node-19">
+                        <a href="http://outer-outer.space/" target="_bank" rel="me">
+                            <svg width="26" height="30" fill="none" class="persona-node-icon" xmlns="http://www.w3.org/2000/svg"><title>outer-outer.space icon</title><path d="M6.04 6.702l2.19-.883v11.409l-2.473 1.06-.106-.319c-.6-1.836-.812-3.779-.777-5.722.07-1.871.424-3.779 1.166-5.545zm.6-1.307a.268.268 0 00.07-.14A12.845 12.845 0 0110.632.91l-.53-.671c-3.284 1.342-6.04 3.885-7.7 7.028C.955 9.987.354 13.095.53 16.167c.212 3.074 1.165 6.111 3.002 8.584.989 1.342 2.26 2.507 3.78 3.284 1.483.777 3.178 1.095 4.873.954a10.2 10.2 0 004.027-1.307c1.236-.706 2.33-1.625 3.355-2.613 1.625-1.625 3.002-3.462 3.956-5.546.954-1.978 1.519-4.203 1.483-6.428 0-2.225-.6-4.45-1.695-6.393-1.413-2.543-3.744-4.591-6.464-5.721L6.64 5.395zm-.53 13.74l6.676-2.79V3.912l.07-.035c.565.318 1.06.635 1.554.989v20.273c-1.06.07-2.154-.141-3.143-.53a9.387 9.387 0 01-2.649-1.766c-1.06-1.024-1.907-2.33-2.508-3.708zm9.325 5.863v-6.71l5.863-2.968c.282 2.014 0 4.133-.954 5.899a7.612 7.612 0 01-2.437 2.755 6.932 6.932 0 01-2.472 1.024zm0-19.355c1.13.953 2.154 1.978 3.002 3.143a16.816 16.816 0 011.519 2.367l-4.521 2.295V5.643zm0 8.936l4.944-2.508c.283.742.53 1.448.707 2.225l-5.651 2.86V14.58z" fill="#82FF63"/></svg>
+                            <figcaption><p class="no-wrap">outer-outer.space</p></figcaption>
+                        </a>
+                    </figure>
+                    <figure class="web-property-node inline-node node-20">
+                        <svg width="127" height="7" fill="none" xmlns="http://www.w3.org/2000/svg"><title>pointer line</title><circle r="3.5" transform="matrix(-1 0 0 1 123.5 3.5)" fill="#fff"/><path stroke="#fff" d="M123 2.5H0"/></svg>
+                        <figcaption class="inline-caption-right"><a class="web-property-node-link" href="https://github.com/outer-outer-space" target="_bank" rel="me">Github</a></figcaption>
+                    </figure>
+                </div>
+                <div class="row-3">
+                    <figure class="web-property-node node-21">
+                        <svg width="7" height="80" fill="none" xmlns="http://www.w3.org/2000/svg"><title>pointer line</title><circle cx="3.5" cy="76.5" r="3.5" transform="rotate(-90 3.5 76.5)" fill="#fff"/><path stroke="#fff" d="M3.5 73V0"/></svg>                       
+                        <figcaption style="margin-left: -25px;"><a class="web-property-node-link" href="https://pinboard.in/u:outer-outer-space" target="_bank" rel="me">Pinboard</a></figcaption>
+                    </figure>
+                    <figure class="web-property-node align-right node-22" style="margin-right: -35px;">
+                        <svg width="284" height="101" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 35px;"><title>pointer line</title><circle cx="280.5" cy="97.5" r="3.5" fill="#fff"/><path stroke="#fff" d="M281.165 98.528l-281-98"/></svg>                      
+                        <figcaption><a class="web-property-node-link" href="https://news.ycombinator.com/user?id=outerouterspace" target="_bank" rel="me">Hacker News</a></figcaption>
+                    </figure>
+                </div>
+            </section>
+        </div>
+
+        <img src="img/d-2.svg" class="green-divider" alt="Dotted divider line" width="100%">
+		
+		<div class="wrapper">
+    		<section class="constellation configuration-space-constellation">
+                    <div class="row-1">
+                        <figure class="web-property-node node-23" style="margin-left: 35px; margin-right: 35px;">
+                            <figcaption style="margin-left: -25px;"><a class="web-property-node-link" href="http://configurationspace.tumblr.com/" target="_bank" rel="me">Tumblr</a></figcaption>
+                            <svg width="291" height="101" fill="none" xmlns="http://www.w3.org/2000/svg"><title>pointer line</title><circle cx="3.5" cy="3.5" r="3.5" fill="#fff"/><path stroke="#fff" d="M3.16 3.526l287 97"/></svg>
+                        </figure>
+                        <figure class="web-property-node align-right node-24" style="margin-left: 35px;">
+                            <figcaption><a class="web-property-node-link" href="https://www.fanfiction.net/~configurationspace" target="_bank" rel="me">FanFiction.Net</a></figcaption>
+                            <svg width="284" height="102" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 40px;"><title>pointer line</title><circle cx="280.5" cy="3.5" r="3.5" fill="#fff"/><path stroke="#fff" d="M281.165 3.472l-281 98"/></svg>
+                        </figure>
+                    </div>
+                    <div class="row-2">
+                        <figure class="web-property-node inline-node node-25">
+                            <figcaption class="inline-caption-left"><a class="web-property-node-link" href="https://twitter.com/config_space" target="_bank" rel="me">Twitter</a></figcaption>
+                            <svg width="127" height="7" fill="none" xmlns="http://www.w3.org/2000/svg"><title>pointer line</title><circle cx="3.5" cy="3.5" r="3.5" fill="#fff"/><path stroke="#fff" d="M4 2.5h123"/></svg>
+                        </figure>
+                        <figure class="persona-node node-26">
+                            <a href="http://c0nfiguration.space/" target="_bank" rel="me">
+                                <svg width="32" height="22" fill="none" class="persona-node-icon" xmlns="http://www.w3.org/2000/svg"><title>sarah-hibner.com icon</title><path d="M9.378.15c1.135 0 2.1.161 2.895.483.794.322 1.57.776 2.327 1.362.208.17.387.255.539.255.378 0 .624-.567.738-1.702h.652c-.076 1.23-.113 3.405-.113 6.527h-.653c-.208-1.23-.397-2.11-.568-2.64a4.69 4.69 0 00-.85-1.56 5.125 5.125 0 00-2.186-1.646A7.04 7.04 0 009.321.66c-1.23 0-2.308.407-3.235 1.22-.908.814-1.618 1.978-2.128 3.491-.511 1.495-.767 3.254-.767 5.278 0 2.063.275 3.832.823 5.307.55 1.476 1.306 2.601 2.27 3.377a5.307 5.307 0 003.32 1.135 7.28 7.28 0 002.754-.539c.889-.36 1.589-.899 2.1-1.617.378-.53.652-1.098.823-1.703.17-.606.33-1.533.482-2.781h.653c0 3.254.037 5.524.113 6.81h-.652c-.057-.605-.142-1.03-.256-1.276-.095-.265-.236-.398-.426-.398-.15 0-.35.076-.595.227-.852.606-1.665 1.07-2.441 1.39-.776.303-1.712.455-2.81.455-1.797 0-3.376-.407-4.739-1.22-1.343-.814-2.393-1.987-3.15-3.52-.737-1.55-1.106-3.395-1.106-5.533 0-2.081.378-3.926 1.135-5.534.775-1.608 1.844-2.857 3.207-3.746C6.076.595 7.637.15 9.378.15zm15.139.086c.832 0 1.485.094 1.958.283.492.17.993.426 1.504.767.416.264.738.397.965.397.17 0 .303-.095.397-.284.095-.208.17-.53.227-.965h.653c-.095 1.098-.142 3.027-.142 5.79h-.653c-.113-1.533-.558-2.82-1.333-3.86-.757-1.06-1.864-1.59-3.32-1.59-1.022 0-1.855.313-2.498.937-.643.606-.965 1.39-.965 2.356 0 .719.161 1.343.483 1.873.34.53.766.983 1.277 1.362.51.378 1.239.86 2.185 1.447l.823.51c1.192.739 2.128 1.391 2.81 1.959a6.631 6.631 0 011.673 1.901c.417.72.625 1.561.625 2.526 0 1.722-.568 3.055-1.703 4.001-1.135.927-2.573 1.39-4.313 1.39-.908 0-1.656-.094-2.242-.283a8.099 8.099 0 01-1.646-.766c-.416-.265-.738-.397-.965-.397-.17 0-.303.104-.397.312-.095.189-.17.501-.227.936h-.653c.076-1.04.114-3.31.114-6.81h.652c.133 1.91.606 3.461 1.42 4.653.813 1.192 2.061 1.788 3.745 1.788 1.022 0 1.892-.312 2.61-.936.72-.643 1.08-1.59 1.08-2.838 0-1.06-.36-1.958-1.08-2.696-.7-.738-1.815-1.57-3.348-2.497-1.116-.681-2.024-1.287-2.724-1.816a6.701 6.701 0 01-1.674-1.902c-.436-.757-.653-1.636-.653-2.639 0-1.59.51-2.8 1.532-3.632C21.736.66 23.004.236 24.517.236z" fill="#82FF63"/></svg>
+                                <figcaption><p>c0nfiguration.space</p></figcaption>
+                            </a>
+                        </figure>
+                        <figure class="web-property-node inline-node node-27">
+                            <svg width="127" height="7" fill="none" xmlns="http://www.w3.org/2000/svg"><title>pointer line</title><circle r="3.5" transform="matrix(-1 0 0 1 123.5 3.5)" fill="#fff"/><path stroke="#fff" d="M123 2.5H0"/></svg>
+                            <figcaption class="inline-caption-right"><a class="web-property-node-link" href="https://old.reddit.com/u/configurationspace" target="_bank" rel="me">Reddit</a></figcaption>
+                        </figure>
+                    </div>
+                    <div class="row-3">
+                        <figure class="web-property-node node-28">
+                            <svg width="291" height="100" fill="none" xmlns="http://www.w3.org/2000/svg"><title>pointer line</title><circle cx="3.5" cy="96.5" r="3.5" fill="#fff"/><path stroke="#fff" d="M3.16 97.474l287-97"/></svg>
+                            <figcaption style="margin-left: -25px;"><a class="web-property-node-link" href="https://www.quotev.com/configurationspace" target="_bank" rel="me">Quotev</a></figcaption>
+                        </figure>
+                        <figure class="web-property-node center node-29">
+                            <svg width="7" height="152" fill="none" xmlns="http://www.w3.org/2000/svg"><title>pointer line</title><circle cx="3.5" cy="148.5" r="3.5" transform="rotate(-90 3.5 148.5)" fill="#fff"/><path stroke="#fff" d="M3.5 149V0"/></svg>
+                            <figcaption><a class="web-property-node-link" href="https://www.fictionpress.com/~configurationspace" target="_bank" rel="me">FictionPress.com</a></figcaption>
+                        </figure>
+                        <figure class="web-property-node align-right node-30" style="margin-right: -20px;">
+                            <svg width="284" height="101" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 20px;"><title>pointer line</title><circle cx="280.5" cy="97.5" r="3.5" fill="#fff"/><path stroke="#fff" d="M281.165 98.528l-281-98"/></svg>
+                            <figcaption><a class="web-property-node-link" href="https://www.wattpad.com/user/configurationspace" target="_bank" rel="me">WattPad</a></figcaption>
+                        </figure>
+                    </div>
+                </section>
+    	    </div>
+            
+            <img class="green-divider" src="img/d-1.svg" alt="Dotted divider line" width="100%">
+
+            <figure class="persona-node lone-node">
+                <a href="http://meet-me-in.space/" target="_bank" rel="me">
+                    <svg width="37" height="38" fill="none" class="persona-node" xmlns="http://www.w3.org/2000/svg"><title>meet-me-in.space icon</title><path fill-rule="evenodd" clip-rule="evenodd" d="M19.103 17.793c.331 0 .603.271.603.603a.605.605 0 01-.603.604.605.605 0 01-.604-.604c0-.332.272-.603.604-.603zm-5.43 1.81c.332 0 .603.271.603.603a.605.605 0 01-.603.604.605.605 0 01-.604-.604c0-.331.272-.603.604-.603zm-6.034.603c.332 0 .604.272.604.604a.605.605 0 01-.604.603.605.605 0 01-.603-.603c0-.332.272-.604.603-.604zm16.893-4.826c.332 0 .604.271.604.603a.605.605 0 01-.604.603.605.605 0 01-.603-.603c0-.332.272-.603.604-.603zm4.827-3.017c.332 0 .603.272.603.603a.605.605 0 01-.603.604.605.605 0 01-.603-.604c0-.331.271-.603.603-.603z" fill="#82FF63"/><path d="M26.319 9.589c4.787-.709 8.963-.507 9.59 1.214 1.016 2.792-6.577 8.12-15.573 11.393-8.998 3.275-18.239 4.075-19.255 1.283-.72-1.978 3.438-5.43 8.466-8.2l.01.026-1.227-3.37a7.77 7.77 0 014.645-9.96 7.773 7.773 0 019.961 4.644l1.226 3.37c-1.276 1.737-3.319 3.116-6.69 4.344-2.221.808-4.043 1.195-5.627 1.218M8.244 20.81a.603.603 0 10-1.206 0 .603.603 0 001.206 0zm6.033-.603a.603.603 0 10-1.206 0 .603.603 0 001.206 0zm15.687-7.24a.603.603 0 10-1.207 0 .603.603 0 001.207 0zm-4.827 3.016a.603.603 0 10-1.206 0 .603.603 0 001.206 0zm-5.43 2.414a.603.603 0 10-1.206 0 .603.603 0 001.206 0zm6.5 4.207l5.567 8.462-5.567-8.462zm-10.11 3.68l1.197 10.212-1.197-10.213zm8.327 7.147l-3.272-8.987 3.272 8.987zM18.587 6.314a4.193 4.193 0 00-2.572-1.204l2.572 1.204z" stroke="#82FF63" stroke-width="1.207" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <figcaption><p style="margin-top: -20px;">meet-me-in.space</p></figcaption>
+                </a>
+            </figure>
+
+
+            <img class="green-divider" src="img/d-2.svg" alt="Dotted divider line" width="100%">
+
+
+			<h2 class="footer-section-h2">I'm often in many places at once.</h2>
+            <p class="footer-p">Have you visualized your own digital media ecosystem?<br /> 
+                <a href="mailto:hi-from@outer-outer.space">Let me know!</a></p>
+
+
+			<!--<footer>
+				<hr class="footer-hr">
+
+				<a class="footer-title" href="../"><strong>Outer</strong> <em>Outer</em> <strong>Space</strong></a>
+			</footer>	-->
+	</body>
+</html>
