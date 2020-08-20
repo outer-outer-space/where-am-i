@@ -14,6 +14,14 @@
     <title>Where am I? -(outer outer space)-</title>
 	<meta name="description" content="A visualization of the constellations of social media personas that have arisen from my tendency to compartmentalize my various trains of thought online.">
 	<meta name="author" content="Outer Outer Space">
+	<meta property="og:title" content="Where am I? Visualization">
+    <meta property="og:description" content="A visualization of the constellations of social media personas that have arisen from my tendency to compartmentalize my various trains of thought online.">
+    <meta property="og:image" content="http://outer-outer.space/where-am-i/img/where-am-i-card.png">
+    <meta property="og:url" content="http://outer-outer.space/where-am-i/">
+    <meta name="twitter:title" content="Where am I? Visualization">
+    <meta name="twitter:description" content="A visualization of the constellations of social media personas that have arisen from my tendency to compartmentalize my various trains of thought online.">
+    <meta name="twitter:image" content="http://outer-outer.space/where-am-i/img/where-am-i-card.png">
+    <meta name="twitter:card" content="summary_large_image">
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Astloch:wght@400;700&family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -118,20 +126,20 @@
 		.row-1 {
     		width: 100%;
     		display: flex;
-    		justify-content: space-between;
+    		justify-content: space-around;
 		}
 		.row-2 {
     		width: 100%;
     		display: flex;
     		justify-content: center;
     		align-items: center;
-            margin-top: 20px;
-            margin-bottom: 20px;
+            margin-top: 0px;
+            margin-bottom: 0px;
 		}
 		.row-3 {
     		width: 100%;
     		display: flex;
-    		justify-content: space-between;
+    		justify-content: space-around;
 		}
 		.inline-constellations {
     		display: flex;
@@ -242,7 +250,10 @@
 			text-align: center;
 		}
     	@media only screen and (max-width: 1080px) {
-    		.title-section-h1 {
+    		.inline-constellations .row-2 {
+        		justify-content: space-between;
+        		margin-top: 30px;
+        		margin-bottom: 30px;
     		}
         }
     	@media only screen and (max-width: 1000px) {
@@ -251,6 +262,9 @@
     		}
     		.inline-constellations {
         		width: 40%;
+    		}
+    		figure {
+                font-size: 11px;
     		}
             .node-2,
             .node-3,
@@ -322,7 +336,7 @@
                     <p class="title-section-p"><em>Last updated August 2020</em></p>
 				</div>
 				<div class="header-right">
-    				<p class="body-p">I tend to compartmentalize my various trains of thought online. This constraint generally seems to suit me, so I formalized the idea into online personas that incorporate various of my tangential interests. Each persona represents a sustained train of thought&#151;in some cases delineated temporally.</p>
+    				<p class="body-p">I tend to compartmentalize my various trains of thought online. This constraint seems to suit me, so I formalized the idea into online personas that incorporate various of my tangential interests. Each persona represents a sustained train of thought&#151;in some cases delineated temporally.</p>
     				<p class="body-p">Until now, I haven’t tried visualizing the constellations of social media personas that have arisen from this delineation of interests. I was inspired to make such a diagram after seeing Yehwan Song’s <a href="http://yhsong.com/" target="_blank" rel="nofollow">visualization of her creative projects</a> during her presentation at Typographics 2020.</p>
 				</div>
 			</header>
@@ -339,6 +353,12 @@
                             <figcaption style="margin-left: -70px;">log.sarah-hibner.com</figcaption>
                         </a>
                         <svg width="86" height="123" fill="none" xmlns="http://www.w3.org/2000/svg"><title>pointer line</title><circle cx="4.565" cy="17.88" r="3.5" transform="rotate(-15 4.565 17.88)" fill="#fff"/><path stroke="#fff" d="M85.627 107.688L4.807 18.569"/></svg>
+                    </figure>
+                    <figure class="web-property-node center">
+                        <a class="web-property-node-link" href="https://www.are.na/sarah-hibner" target="_bank" rel="me">
+                            <figcaption>Are.na</figcaption>
+                        </a>
+                        <svg width="7" height="152" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="3.5" cy="3.5" r="3.5" transform="rotate(90 3.5 3.5)" fill="#fff"/><path stroke="#fff" d="M3.5 3v149"/></svg>
                     </figure>
                     <figure class="web-property-node align-right node-3" style="margin-right: -25px;">
                         <a class="web-property-node-link" href="https://www.linkedin.com/in/sahibner/" target="_bank" rel="me">
